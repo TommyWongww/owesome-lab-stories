@@ -9,32 +9,32 @@ Object detection
 
 ## 初步介绍
 卷积（边缘检测等等）
-![20170325211712248]($res/20170325211712248.gif)
+![20170325211712248](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/20170325211712248.gif)
 
 * 特征提取
-![20180502180257]($res/20180502180257.png)
+![20180502180257](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/20180502180257.png)
 
 **Pooling（压缩）**
-![20170325211641810]($res/20170325211641810.gif)
+![20170325211641810](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/20170325211641810.gif)
 
 **Padding**
-![20170325220130828]($res/20170325220130828.gif)
+![20170325220130828](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/20170325220130828.gif)
 
 **重叠度（IOU）:**
 物体检测需要定位出物体的bounding box，就像下面的图片一样，我们不仅要定位出车辆的bounding box 我们还要识别出bounding box 里面的物体就是车辆。
 
-![v2-0659a27df35fd2f62cd00127ca8d1a21_b]($res/v2-0659a27df35fd2f62cd00127ca8d1a21_b.jpg)
+![v2-0659a27df35fd2f62cd00127ca8d1a21_b](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/v2-0659a27df35fd2f62cd00127ca8d1a21_b.jpg)
 
 对于bounding box的定位精度，有一个很重要的概念： 因为我们算法不可能百分百跟人工标注的数据完全匹配，因此就存在一个定位精度评价公式：IOU。 它定义了两个bounding box的重叠度，如下图所示：
 
 
-![v2-6fe13f10a9cb286f06aa1e3e2a2b29bc_b]($res/v2-6fe13f10a9cb286f06aa1e3e2a2b29bc_b.jpg)
+![v2-6fe13f10a9cb286f06aa1e3e2a2b29bc_b](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/v2-6fe13f10a9cb286f06aa1e3e2a2b29bc_b.jpg)
 
-![v2-e26ffc0835bc30dede8d82989ef9e178_b]($res/v2-e26ffc0835bc30dede8d82989ef9e178_b.jpg)
+![v2-e26ffc0835bc30dede8d82989ef9e178_b](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/v2-e26ffc0835bc30dede8d82989ef9e178_b.jpg)
 
 **非极大值抑制（NMS**
 
-![v2-19c03377416e437a288e29bd27e97c14_b]($res/v2-19c03377416e437a288e29bd27e97c14_b.jpg)
+![v2-19c03377416e437a288e29bd27e97c14_b](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/v2-19c03377416e437a288e29bd27e97c14_b.jpg)
 
 (1)从最大概率矩形框F开始，分别判断A~E与F的重叠度IOU是否大于某个设定的阈值;
 
@@ -78,7 +78,7 @@ FC: [1x1x4096]  memory:  4096  weights: 7*7*512*4096 = 102,760,448
 FC: [1x1x4096]  memory:  4096  weights: 4096*4096 = 16,777,216
 FC: [1x1x1000]  memory:  1000 weights: 4096*1000 = 4,096,000
 `````````
-![20180502180245]($res/20180502180245.png)
+![20180502180245](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/20180502180245.png)
 
 
 ## Object detection
@@ -90,7 +90,7 @@ PASCAL VOC 图片信息相对imageNet更加复杂
 
 ### 1.暴力解决：滑动窗口
 （已经猜到人脸大小设定窗口大小）
-![Lab-object-01]($res/Lab-object-01.png)
+![Lab-object-01](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/Lab-object-01.png)
 穷举来实现，每个像素遍历
 
 ### 2.Region Proposal（区域提名）
@@ -102,7 +102,7 @@ texture
 size
 fill
 进行合并
-![Lab-object-02]($res/Lab-object-02.png)
+![Lab-object-02](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/Lab-object-02.png)
 光晕部分由色泽不同和图像之间的相似度，对其进行合并，最终分成几个大块儿，对应到下面就是这个蓝色的块儿，就是猜测到的有可能有目标物体的图块儿。然后对候选的几个框进行分类，这样极大提高了速度，从穷举变成有限次的分类问题。
 类似层次聚类，本身是无监督的
 
@@ -114,7 +114,7 @@ rgb[^1]
 
 ### RCNN
 用卷积神经网络CNN，在这里就是用Region-based CNN （RCNN）
-![Lab-object-03]($res/Lab-object-03.png)
+![Lab-object-03](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/Lab-object-03.png)
 
 创新点：
 * 采用CNN网络提取图像特征，从经验驱动的人造特征范式HOG、SIFT到数据驱动的表示学习范式，提高特征   对样本的表示能力；
@@ -145,7 +145,7 @@ pretrained with RCNN（用VGG16在imageNet）
 
 (1)各向异性缩放
 (2)各向同性缩放
-![v2-59449e8409b943f384c4cc3bf789d8b9_b]($res/v2-59449e8409b943f384c4cc3bf789d8b9_b.jpg)
+![v2-59449e8409b943f384c4cc3bf789d8b9_b](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/v2-59449e8409b943f384c4cc3bf789d8b9_b.jpg)
 
 A、先扩充后裁剪： 直接在原始图片中，把bounding box的边界进行扩展延伸成正方形，然后再进行裁剪；如果已经延伸到了原始图片的外边界，那么就用bounding box中的颜色均值填充；如上图(B)所示;
 
@@ -177,7 +177,7 @@ CNN阶段：打标签，selective search VS 人工
 
 
 
-![v2-3ef21dd028fd210f92107c1ded528045_b]($res/v2-3ef21dd028fd210f92107c1ded528045_b.jpg)
+![v2-3ef21dd028fd210f92107c1ded528045_b](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/v2-3ef21dd028fd210f92107c1ded528045_b.jpg)
 
 
 **位置精修：** 
