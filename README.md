@@ -2,12 +2,12 @@
 last update:2018.04.23
 **discribe my lifetime works and codes.**
 
-[lifetime](#lifetime)
-[计划表](#计划表)
-[CV](#CV)
+* [lifetime](#lifetime)
+	* [计划表](#计划表)
+	* [CV](#CV)
 # lifetime
 ===========
-# ## 计划表
+## 计划表
 1.中草药wap系统 **图像专题** 还有**知识问答**部分
 
 |      名称      |   时间  |
@@ -22,7 +22,7 @@ last update:2018.04.23
 * 初步静态页面开发完成
 * 对静态页面改进并开发完对应的js工程代码
 
-# ## CV
+## CV
 
 ### object detection 
 [object detection](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.md)
