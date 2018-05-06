@@ -4,27 +4,22 @@ style: plain
 
 Object detection
 ===========
-* [Object detection](#Object-detection )
+<!-- TOC -->
 
-    * [初步介绍](#初步介绍)
+- [初步介绍](#初步介绍)
+- [Object detection](#object-detection)
+    - [初步介绍](#)
+    - [Object detection](#object-detection)
+        - [思路：](#)
+        - [1.暴力解决：滑动窗口](#1)
+        - [2.Region Proposal（区域提名）](#2region-proposal)
+        - [RCNN](#rcnn)
+        - [Fast R-CNN](#fast-r-cnn)
+        - [Faster RCNN](#faster-rcnn)
+        - [YOLO（You Only Look Once）](#yoloyou-only-look-once)
+    - [论文目录：](#)
 
-        * [思路](#思路)
-
-            * [1暴力解决：滑动窗口](#1暴力解决)
-
-            * [2Region Proposal](#2Region)
-
-        * [RCNN](#RCNN)
-
-        * [Fast R-CNN](#FastR-CNN)
-
-        * [Faster RCNN](#FasterRCNN)
-
-        * [YOLO](#YOLOYouOnlyLookOnce)
-
-    * [论文目录](#论文目录)
-
-
+<!-- /TOC -->
 ## 初步介绍
 卷积（边缘检测等等）
 ![20170325211712248](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.resource/20170325211712248.gif)

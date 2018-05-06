@@ -23,7 +23,6 @@ last update:2018.04.23
 * 对静态页面改进并开发完对应的js工程代码
 
 ## CV
-
 ### object detection 
 [object detection](https://github.com/TommyWongww/owesome-lab-stories/blob/master/object%20detection.md)
 
